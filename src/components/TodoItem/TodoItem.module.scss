@@ -1,0 +1,77 @@
+.wrapper {
+    &:hover {
+        background: #CACACA;
+    }
+    
+    &.select {
+        background: #515151B2;
+        color: white;
+        input {
+            color: white;
+        }
+    }
+
+    &.preDelete {
+        opacity: 0.3;
+        color: black;
+        input {
+            color: black;
+        }
+        &:hover {
+            background: transparent;
+        }
+    }
+}
+
+td {
+    position: relative;
+    height: 20px;
+
+    .deleteTodo {
+        position: absolute;
+        cursor: pointer;
+        color: black;
+        right: -17px;
+        top: 8px;
+        font-size: 10px;
+    }
+
+    &:first-child {
+        padding-left: 10px;
+    }
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    input {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+td {
+    input {
+        background: none;
+        border: none;
+        width: 100%;
+    }  
+    img {
+        width: 17px;
+        margin-right: 7px;
+    }
+}
+
+.modalWrapper {
+    position: relative;
+}
+
+.closeModal {
+    height: 100%;
+    padding: 100%;
+    position: fixed;
+    z-index: 8;
+    left: 0;
+    top: 0;
+}

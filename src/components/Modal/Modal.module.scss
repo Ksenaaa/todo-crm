@@ -1,0 +1,22 @@
+.wrapper {
+    width: 111px;
+    height: 90px;
+    box-shadow: 3px 0px 1.4em rgba(0, 0, 0, 0.20), -3px 0 1.4em rgba(0, 0, 0, 0.20);
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 10px;
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    z-index: 10;
+    
+    & img {
+        height: 17px;
+    }
+}
+
+.modalItemActive {
+    opacity: 0.3;
+}

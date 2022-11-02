@@ -1,22 +1,12 @@
-.component {
-    height: 45px;
-
-    input {
-        border: none;
-        width: 100%;
-        border-bottom: 1px solid rgb(131, 130, 130);
-    }
-}
-
 thead {
     & th:nth-child(1) {
-        width: 20%;
+        width: 17%;
     }
     & th:nth-child(2) {
-        width: 20%;
+        width: 17%;
     }
     & th:nth-child(3) {
-        width: 10%;
+        width: 16%;
     }
     & th:nth-child(4) {
         width: 50%;
@@ -24,14 +14,28 @@ thead {
 
     th {
         position: relative;
-        padding: 5px;
-        padding-bottom: 26px;
-        height: 40px;
-    
+
+        input {
+            border: none;
+            width: 90%;
+            border-bottom: 1px solid rgb(131, 130, 130);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-right: 10px;
+        }
+
         & > div {
             position: absolute;
-            right: 8px;
-            bottom: 30px;
+            right: 10px;
+            bottom: 5px;
         }
+    }
+}
+
+.modalWrapper {
+    position: relative;
+    & td {
+        padding: 0 !important;
     }
 }

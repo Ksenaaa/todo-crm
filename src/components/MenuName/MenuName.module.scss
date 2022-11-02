@@ -1,0 +1,52 @@
+.wrapper {
+  width: 136px;
+  height: 100px;
+  background: white;
+  position: absolute;
+  top: 0px;
+  left: 195px;
+  z-index: 10;
+  padding: 7px;
+  box-shadow: 3px 0px 1.4em rgba(0, 0, 0, 0.20), -3px 0 1.4em rgba(0, 0, 0, 0.20);
+}
+
+.wrapperItems {
+  height: 100%;
+  padding: 0 5px 0 2px;
+  font-size: 13px;
+  line-height: 18px;
+  overflow-y: scroll;
+  animation: 0.5s linear modal;
+}
+
+@keyframes modal {
+  from {
+    transform: translateY(0);
+    height: 0%;
+  }
+}
+
+.item {
+  width: 88%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  position: relative;
+  padding-left: 12px; 
+  &.select {
+    &:before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 7.5px;
+      background-color: black;
+      position: absolute;
+      top: 7px;
+      left: 0px;
+    }
+  }
+  &:hover {
+    opacity: 0.3;
+  }
+}

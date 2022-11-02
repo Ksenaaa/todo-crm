@@ -9,7 +9,6 @@ export const TodoList = ({ isIconsVisible }) => {
     const { 
         todos, 
         deleteTodo, 
-        isEditing, 
         checkedTodo, 
         selectedTodo, 
         todosIdSelected, 
@@ -28,7 +27,6 @@ export const TodoList = ({ isIconsVisible }) => {
                     selectedTodo={selectedTodo}
                     changeTodo={changeTodo}
                     changeTodoImg={changeTodoImg}
-                    isEditing={isEditing}
                     checkedTodo={checkedTodo}
                     isIconsVisible={isIconsVisible}
                 />

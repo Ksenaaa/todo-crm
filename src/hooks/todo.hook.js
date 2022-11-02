@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
 import { newTodo } from '../constants/newTodo'
@@ -6,16 +6,10 @@ import { newTodo } from '../constants/newTodo'
 export const useTodos = () => {
     const [todos, setTodo] = useState([])
     const [todosIdSelected, setTodosIdSelected] = useState([])
-    const [isEditing, setEditing] = useState(false);
-    
-    const toggleEditing = useCallback(() => {
-      setEditing(!isEditing)
-    }, [isEditing])
 
     const addTodo = useCallback(() => {
         setTodo(preState => ([{ ...newTodo, todoId: uuidv4() }, ...preState]))
-        toggleEditing()
-    }, [toggleEditing])
+    }, [])
 
     const selectedTodo = useCallback((id) => {
         setTodosIdSelected(preState => {
@@ -51,6 +45,11 @@ export const useTodos = () => {
     }, [])
 
     const checkedTodo = useCallback((id) => {
+        setTodosIdSelected(preState => {
+            const findId = preState.find(todoId => todoId === id)
+            if (findId) return preState.filter(todoId => todoId !== id)
+            return preState
+        })
         setTodo(preState => preState.map(todo => {
             if (todo.todoId === id) return { ...todo, status: !todo.status }
             return todo
@@ -60,7 +59,6 @@ export const useTodos = () => {
     return { 
         todos, 
         addTodo, 
-        isEditing, 
         todosIdSelected, 
         checkedTodo, 
         selectedTodo, 

@@ -1,0 +1,13 @@
+.wrapper {
+    min-width: 13.33px;
+    min-height: 13.33px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    font-size: 9px;
+    position: absolute;
+    top: -7px;
+    left: 20px;
+    white-space: nowrap;
+}
